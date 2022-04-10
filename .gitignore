@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Alura.Estacionamento.Testes/bin/Debug/net5.0
+/Alura.Estacionamento.Testes/obj
+/Alura.Estacionamento/obj
+/Alura.Estacionamento/bin/Debug/net5.0
+/.vs/Alura.Estacionamento

@@ -34,7 +34,7 @@ namespace Alura.Estacionamento.Testes
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName ="Testa Tipo do Veiculo")]
         public void TestaTipoVeiculo()
         {
             //arrange
@@ -43,6 +43,13 @@ namespace Alura.Estacionamento.Testes
             //assert
             Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
         }
+
+        [Fact(Skip = "Teste nao implementado",DisplayName ="Testa Nome do Proprietario")]
+        public void TestaNomeProprietario()
+        {
+
+        }
+
 
     }
 }

@@ -1,5 +1,6 @@
 using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
+using Alura.Estacionamento.Testes.ClassData;
 using System;
 using Xunit;
 
@@ -48,6 +49,21 @@ namespace Alura.Estacionamento.Testes
         public void TestaNomeProprietario()
         {
 
+        }
+
+        [Theory]
+        [ClassData(typeof(Veiculo))]
+        public void TestaVeiculoClass(Veiculo modelo)
+        {
+            //Arrange
+            var veiculo = new Veiculo();
+
+            //Act
+            veiculo.Acelerar(10);
+            modelo.Acelerar(10);
+
+            //Assert
+            Assert.Equal(modelo.VelocidadeAtual, veiculo.VelocidadeAtual);
         }
 
 

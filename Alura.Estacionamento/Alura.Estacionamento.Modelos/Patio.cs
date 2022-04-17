@@ -83,6 +83,18 @@ namespace Alura.Estacionamento.Modelos
             return informacao;
         }
 
+        public Veiculo AlteraDadosVeiculo(Veiculo veiculoAlterado)
+        {
+            var veiculoTemp = (from veiculo in this.Veiculos
+                               where veiculo.Placa == veiculoAlterado.Placa
+                               select veiculo).SingleOrDefault();
+
+            veiculoTemp.Editar(veiculoAlterado);
+
+            return veiculoTemp;
+
+        }
+
         public Veiculo LocalizaVeiculoPatio(string placa)
         {
             return (from veiculo in this.Veiculos

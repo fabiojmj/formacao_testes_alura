@@ -113,6 +113,13 @@ namespace Alura.Estacionamento.Modelos
             Proprietario = proprietario;
         }
 
+        internal void Editar(Veiculo veiculoAlterado)
+        {
+            this.Proprietario = veiculoAlterado.Proprietario;
+            this.Placa = veiculoAlterado.Placa;
+            this.Cor = veiculoAlterado.Cor;
+            this.Modelo = veiculoAlterado.Modelo;
 
+        }
     }
 }

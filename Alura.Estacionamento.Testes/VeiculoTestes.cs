@@ -22,7 +22,7 @@ namespace Alura.Estacionamento.Testes
         {
             //Arrange
             //var veiculo = new Veiculo();
-            
+
             //Act
             veiculo.Acelerar(10);
 
@@ -44,7 +44,7 @@ namespace Alura.Estacionamento.Testes
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
 
-        [Fact(DisplayName ="Testa Tipo do Veiculo")]
+        [Fact(DisplayName = "Testa Tipo do Veiculo")]
         public void TestaTipoVeiculoAutomovel()
         {
             //arrange
@@ -54,7 +54,7 @@ namespace Alura.Estacionamento.Testes
             Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
         }
 
-        [Fact(Skip = "Teste nao implementado",DisplayName ="Testa Nome do Proprietario")]
+        [Fact(Skip = "Teste nao implementado", DisplayName = "Testa Nome do Proprietario")]
         public void TestaNomeProprietarioDoVeiculo()
         {
 
@@ -77,9 +77,9 @@ namespace Alura.Estacionamento.Testes
 
         [Fact]
         public void TestaAlterarDadosVeiculos()
-        {           
+        {
             //arrange
-            var veiculo = new Veiculo
+            var veiculoSalvo = new Veiculo
             {
                 Proprietario = "Jose Silva",
                 Tipo = TipoVeiculo.Automovel,
@@ -97,13 +97,13 @@ namespace Alura.Estacionamento.Testes
                 Placa = "ZXC-8524"
             };
             var estacionamento = new Patio();
-            estacionamento.RegistrarEntradaVeiculo(veiculo);
-            
+            estacionamento.RegistrarEntradaVeiculo(veiculoSalvo);
+
             //act
             Veiculo alterado = estacionamento.AlteraDadosVeiculo(veiculoAlterado);
 
             //assert
-            Assert.Equal(veiculo.Cor,alterado.Cor);
+            Assert.Equal(veiculoSalvo.Cor, alterado.Cor);
 
         }
 
@@ -125,6 +125,34 @@ namespace Alura.Estacionamento.Testes
             Assert.Contains("Tipo do Veiculo: Automovel", dados);
         }
 
+        [Fact]
+        public void TestaNomeProprietarioVeiculoComMenosTresCaracteres()
+        {
+            //arrange
+            string nomeProprietario = "ab";          
 
+            //assert
+            Assert.Throws<FormatException>(
+                //act
+                () =>
+                {
+                    new Veiculo(nomeProprietario);
+                }
+                );
+        }
+
+        [Fact]
+        public void TestaExcecaoDoQuartoCaracterDaPlaca()
+        {
+            //arrange
+            string placa = "ASDF8888";
+
+            //act
+            var mensagem = Assert.Throws<FormatException>(()=> {
+                new Veiculo().Placa = placa;
+            });
+
+            Assert.Equal("O 4° caractere deve ser um hífen", mensagem.Message);
+        }
     }
 }

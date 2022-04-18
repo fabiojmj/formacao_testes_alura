@@ -98,6 +98,24 @@ namespace Alura.Estacionamento.Testes
 
         }
 
+        [Fact]
+        public void TestaDadosVeiculo()
+        {
+            //arrange
+            var veiculo = new Veiculo
+            {
+                Proprietario = "Jose Silva",
+                Tipo = TipoVeiculo.Automovel,
+                Cor = "Preto",
+                Modelo = "Opala",
+                Placa = "ZXC-8524"
+            };
+            //act
+            string dados = veiculo.ToString();
+            //assert
+            Assert.Contains("Tipo do Veiculo: Automovel", dados);
+        }
+
 
     }
 }

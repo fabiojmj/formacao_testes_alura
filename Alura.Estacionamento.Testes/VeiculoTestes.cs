@@ -8,11 +8,20 @@ namespace Alura.Estacionamento.Testes
 {
     public class VeiculosTestes
     {
+
+        private Veiculo veiculo;
+
+        //Construtor -> Setup
+        public VeiculosTestes()
+        {
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         public void TestaVeiculoAcelerarComParametro10()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             
             //Act
             veiculo.Acelerar(10);
@@ -26,7 +35,7 @@ namespace Alura.Estacionamento.Testes
         public void TestaVeiculoFrearComParametro10()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Frear(10);
@@ -39,7 +48,7 @@ namespace Alura.Estacionamento.Testes
         public void TestaTipoVeiculoAutomovel()
         {
             //arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             //act
             //assert
             Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
@@ -56,7 +65,7 @@ namespace Alura.Estacionamento.Testes
         public void TestaVeiculoClass(Veiculo modelo)
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Acelerar(10);

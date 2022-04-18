@@ -11,6 +11,13 @@ namespace Alura.Estacionamento.Testes
 {
     public class PatioTestes
     {
+        private Patio estacionamento;
+
+        public PatioTestes()
+        {
+            estacionamento = new Patio();
+        }
+
         [Fact]
         public void TesteValidaFaturamento()
         {
@@ -22,7 +29,7 @@ namespace Alura.Estacionamento.Testes
                 Modelo = "Fusca",
                 Placa = "ASD-9999"
             };
-            var estacionamento = new Patio();
+            //var estacionamento = new Patio();
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
@@ -47,7 +54,7 @@ namespace Alura.Estacionamento.Testes
                 Modelo = modelo
             };
 
-            var estacionamento = new Patio();
+            //var estacionamento = new Patio();
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
             //act
@@ -69,7 +76,7 @@ namespace Alura.Estacionamento.Testes
                 Modelo = modelo,
                 Placa = placa
             };
-            var estacionamento = new Patio();
+            //var estacionamento = new Patio();
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             //act
             Veiculo consultado = estacionamento.LocalizaVeiculoPatio(placa);

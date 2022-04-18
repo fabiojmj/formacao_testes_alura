@@ -58,7 +58,7 @@ namespace Alura.Estacionamento.Testes
 
         [Theory]
         [InlineData("Andre Silva", "ASD-1498","Preto", "GOL")]
-        public void TesteLocalizaVeiculoPatio(string proprietario,string placa, string cor, string modelo)
+        public void TesteLocalizaVeiculoPatioComBaseNaPlaca(string proprietario,string placa, string cor, string modelo)
         {
             //arrange
             var veiculo = new Veiculo
@@ -77,5 +77,7 @@ namespace Alura.Estacionamento.Testes
             //assert
             Assert.Equal(consultado.Placa,placa);
         }
+
+
     }
 }

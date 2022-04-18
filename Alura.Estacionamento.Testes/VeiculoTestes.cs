@@ -9,7 +9,7 @@ namespace Alura.Estacionamento.Testes
     public class VeiculosTestes
     {
         [Fact]
-        public void TestaVeiculoAcelerar()
+        public void TestaVeiculoAcelerarComParametro10()
         {
             //Arrange
             var veiculo = new Veiculo();
@@ -23,7 +23,7 @@ namespace Alura.Estacionamento.Testes
 
 
         [Fact]
-        public void TestaVeiculoFrear()
+        public void TestaVeiculoFrearComParametro10()
         {
             //Arrange
             var veiculo = new Veiculo();
@@ -36,7 +36,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact(DisplayName ="Testa Tipo do Veiculo")]
-        public void TestaTipoVeiculo()
+        public void TestaTipoVeiculoAutomovel()
         {
             //arrange
             var veiculo = new Veiculo();
@@ -46,7 +46,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact(Skip = "Teste nao implementado",DisplayName ="Testa Nome do Proprietario")]
-        public void TestaNomeProprietario()
+        public void TestaNomeProprietarioDoVeiculo()
         {
 
         }
@@ -99,7 +99,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact]
-        public void TestaDadosVeiculo()
+        public void FichaInformativaDoVeiculo()
         {
             //arrange
             var veiculo = new Veiculo

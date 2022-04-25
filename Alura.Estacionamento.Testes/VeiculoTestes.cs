@@ -10,11 +10,16 @@ namespace Alura.Estacionamento.Testes
     {
 
         private Veiculo veiculo;
+        private Operador OperadorPatio;
 
         //Construtor -> Setup
         public VeiculosTestes()
         {
             veiculo = new Veiculo();
+            OperadorPatio = new Operador
+            {
+                Nome = "Pedro Fagundes"
+            };
         }
 
         [Fact]
@@ -97,6 +102,7 @@ namespace Alura.Estacionamento.Testes
                 Placa = "ZXC-8524"
             };
             var estacionamento = new Patio();
+            estacionamento.OperadorPatio = OperadorPatio;
             estacionamento.RegistrarEntradaVeiculo(veiculoSalvo);
 
             //act

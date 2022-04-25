@@ -12,10 +12,16 @@ namespace Alura.Estacionamento.Testes
     public class PatioTestes
     {
         private Patio estacionamento;
+        private Operador OperadorPatio;
+
 
         public PatioTestes()
         {
             estacionamento = new Patio();
+            OperadorPatio  = new Operador
+            {
+                Nome = "Pedro Fagundes"
+            };
         }
 
         [Fact]
@@ -29,7 +35,9 @@ namespace Alura.Estacionamento.Testes
                 Modelo = "Fusca",
                 Placa = "ASD-9999"
             };
+             
             //var estacionamento = new Patio();
+            estacionamento.OperadorPatio = OperadorPatio;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
@@ -55,6 +63,7 @@ namespace Alura.Estacionamento.Testes
             };
 
             //var estacionamento = new Patio();
+            estacionamento.OperadorPatio = OperadorPatio;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
             //act
@@ -77,24 +86,14 @@ namespace Alura.Estacionamento.Testes
                 Placa = placa
             };
             //var estacionamento = new Patio();
+            estacionamento.OperadorPatio = OperadorPatio;
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             //act
             Veiculo consultado = estacionamento.LocalizaVeiculoPatio(veiculo.IdTicket);
 
             //assert
             Assert.Contains("### Ticket Estacionamento Alura ###", consultado.Ticket);
-        }
-        
-        [Fact]
-        public void TestaGeraTicket()
-        {
-            //arrange
-            string placa = "ASD-1498";
-            //act
-            //string ticket = estacionamento.GeraTicket(placa);
-            //assert
-            //Assert.Equal();
-        }
+        }      
 
     }
 }

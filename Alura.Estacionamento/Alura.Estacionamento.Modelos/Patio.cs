@@ -84,7 +84,7 @@ namespace Alura.Estacionamento.Modelos
             return informacao;
         }
 
-        public string GeraTicket(Veiculo veiculo)
+        private string GeraTicket(Veiculo veiculo)
         {
 
             veiculo.IdTicket = new Guid().ToString().Substring(0, 5);
